@@ -19,8 +19,6 @@ const port = process.env.PORT || 8000
 http.createServer(app).listen(port, ()=>{
     console.log(`\x1b[32m`, `Server listening on: ${port}`, `\x1b[0m`)
 });
-
-
 // import express from 'express';
 // import http from 'http';
 // import bodyParser from 'body-parser';
