@@ -12,8 +12,6 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 // app.use(express.static('../../docs'))
 app.use(express.static(path.join(__dirname, '../../docs')));
-console.log(__dirname)
-console.log(path.join(__dirname, '../../docs'))
 // Server Setup
 const port = process.env.PORT || 8000
 http.createServer(app).listen(port, ()=>{
