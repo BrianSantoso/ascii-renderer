@@ -1,44 +1,87 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import { HashRouter, Route, Switch } from 'react-router-dom';
-import reduxThunk from 'redux-thunk';
-
-import App from './components/app';
-import Home from './components/home';
-import Public from './components/public';
-import Account from './components/account';
-import Signin from './components/auth/signin';
-import Signup from './components/auth/signup';
-import Signout from './components/auth/signout'
-import RequireAuth from './components/auth/require_auth';
-import reducers from './reducers';
-import { AUTH_USER } from './actions/types';
-
+import * as THREE from 'three'
+import { AsciiEffect } from 'three/examples/jsm/effects/AsciiEffect'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import '../style/style.scss'
 
-const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
-const store = createStoreWithMiddleware(reducers)
-const token = localStorage.getItem('auth_jwt_token');
+let camera, controls, scene, renderer, effect
 
-// if we have a token, consider the user to be signed in
-if (token) {
-  store.dispatch({type: AUTH_USER})
+init()
+initWhale()
+animate()
+
+function init() {
+  camera = new THREE.PerspectiveCamera(
+    70,
+    window.innerWidth / window.innerHeight,
+    1,
+    5000
+  )
+  camera.position.y = 450
+  camera.position.z = 1200
+
+  scene = new THREE.Scene()
+  scene.background = new THREE.Color(1, 1, 1)
+
+  let s = 100000
+  const pointLight1 = new THREE.PointLight(0xffffff)
+  pointLight1.position.set(500 * s, 500 * s, 500 * s)
+  scene.add(pointLight1)
+
+  const pointLight2 = new THREE.PointLight(0xffffff, 0.25)
+  pointLight2.position.set(-500* s, -500 * s, -500 * s)
+  scene.add(pointLight2)
+
+  renderer = new THREE.WebGLRenderer()
+  renderer.setSize(window.innerWidth, window.innerHeight)
+
+  effect = new AsciiEffect(renderer, ' `.:-+*=%@#', { invert: true })
+  effect.setSize(window.innerWidth, window.innerHeight)
+  effect.domElement.style.color = 'white'
+  effect.domElement.style.backgroundColor = 'black'
+
+  // Special case: append effect.domElement, instead of renderer.domElement.
+  // AsciiEffect creates a custom domElement (a div container) where the ASCII elements are placed.
+  effect.domElement.id = 'myCanvas'
+  document.body.appendChild(effect.domElement)
+  controls = new OrbitControls(camera, effect.domElement)
+
+  // document.body.appendChild(renderer.domElement)
+  // controls = new OrbitControls(camera, renderer.domElement)
+
+  window.addEventListener('resize', onWindowResize)
 }
-ReactDOM.render(
-  <Provider store={store}>
-    <HashRouter hashType="noslash">
-      <App>
-        <Switch>
-          <Route exact path="/" component= {Home} />
-          <Route path="/public" component= {Public} />
-          <Route path="/account" component= {RequireAuth(Account)} />
-          <Route path="/signin" component= {Signin} />
-          <Route path="/signup" component= {Signup} />
-          <Route path="/signout" component= {Signout} />
-        </Switch>
-      </App>
-    </HashRouter>
-  </Provider>
-  , document.getElementById('root'));
+
+function initWhale() {
+  const manager = new THREE.LoadingManager();
+  const loader = new GLTFLoader(manager);
+  const path = './statics/whale.glb';
+  loader.load(path, function(gltf) {
+    let mesh = gltf.scene.children[0];
+    console.log('gltf', gltf)
+    mesh.scale.set(10000, 10000, 10000)
+    mesh.position.set(-1000, 0, 0)
+    scene.add(mesh)
+    console.log(mesh)
+  });
+}
+
+function onWindowResize() {
+  camera.aspect = window.innerWidth / window.innerHeight
+  camera.updateProjectionMatrix()
+
+  renderer.setSize(window.innerWidth, window.innerHeight)
+  effect.setSize(window.innerWidth, window.innerHeight)
+}
+
+function animate() {
+  requestAnimationFrame(animate)
+
+  render()
+}
+
+function render() {
+  controls.update()
+
+  effect.render(scene, camera)
+}
