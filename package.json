@@ -9,7 +9,7 @@
     "prepush": "npm test",
     "heroku:add": "heroku git:remote -a",
     "deploy:heroku": "git subtree push --prefix server heroku master",
-    "start": "npm --prefix ./server/ run build && npm --prefix ./server/ run start"
+    "start": "npm --prefix ./client/ run build && npm --prefix ./server/ run build && npm --prefix ./server/ run start"
   },
   "engines": {
     "node": ">=12.0.0",

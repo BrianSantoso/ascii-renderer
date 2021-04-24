@@ -74,6 +74,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_three_examples_jsm_effects_AsciiEffect__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_three_examples_jsm_controls_OrbitControls__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_three_examples_jsm_loaders_GLTFLoader__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__style_style_scss__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__style_style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__style_style_scss__);
+
 
 
 
@@ -112,6 +115,7 @@ function init() {
 
   // Special case: append effect.domElement, instead of renderer.domElement.
   // AsciiEffect creates a custom domElement (a div container) where the ASCII elements are placed.
+  effect.domElement.id = 'myCanvas';
   document.body.appendChild(effect.domElement);
   controls = new __WEBPACK_IMPORTED_MODULE_2_three_examples_jsm_controls_OrbitControls__["a" /* OrbitControls */](camera, effect.domElement);
 
@@ -5553,6 +5557,13 @@ var GLTFLoader = ( function () {
 
 
 
+
+/***/ }),
+
+/***/ 56:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 

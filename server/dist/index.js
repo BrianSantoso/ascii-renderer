@@ -30,14 +30,23 @@ app.use((0, _cors2.default)({
 app.use(_bodyParser2.default.json());
 app.use(_bodyParser2.default.urlencoded({ extended: false }));
 app.use(_express2.default.static(_path2.default.join(__dirname, '../../docs')));
-app.get('/', function (req, res) {
-    res.sendFile(_path2.default.join(__dirname, '../../docs', 'index.html'));
-});
+// app.get('/', (req, res) => {
+//     res.sendFile(path.join(__dirname, '../../docs', 'index.html'));
+// });
 console.log(__dirname);
 console.log(_path2.default.join(__dirname, '../../docs'));
 // app.get('*', (req, res) => {
-//     res.sendFile(path.resolve(__dirname, '../../docs', 'index.html'));
+//     res.sendFile(path.join(__dirname, '../../docs', 'index.html'));
 // })
+
+// if(process.env.NODE.ENV === 'production') {
+//     app.use(express.static(path.join(__dirname, '../../docs')));
+
+//     app.get('*', (req, res) => {
+//         res.sendFile(path.join(__dirname, '../../docs', 'index.html'))
+//     });
+// }
+
 // Server Setup
 var port = process.env.PORT || 8000;
 _http2.default.createServer(app).listen(port, function () {
