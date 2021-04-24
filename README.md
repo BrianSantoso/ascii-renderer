@@ -1,3 +1,7 @@
+https://dashboard.heroku.com/apps/infinite-everglades-91574
+
+[![Whale Render][whale.png]][https://dashboard.heroku.com/apps/infinite-everglades-91574]
+
 ## clone or download
 ```terminal
 $ git clone https://github.com/BrianSantoso/ascii-renderer.git
@@ -66,7 +70,7 @@ $ heroku create
 $ npm run heroku:add <your-super-amazing-heroku-app>
 // remember to run this command in the root level, not the server level, so if you follow the documentation along, you may need to do `cd ..`
 $ pwd
-/Users/<your-name>/<project-dir>
+/Users/<your-name>/<project-root>
 $ npm run deploy:heroku
 ```
 
