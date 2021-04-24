@@ -35,7 +35,8 @@ function init() {
   renderer = new THREE.WebGLRenderer()
   renderer.setSize(window.innerWidth, window.innerHeight)
 
-  effect = new AsciiEffect(renderer, ' `.:-+*=%@#', { invert: true })
+  let charset = ' `.:-+*=%@#'
+  effect = new AsciiEffect(renderer, charset, { invert: true })
   effect.setSize(window.innerWidth, window.innerHeight)
   effect.domElement.style.color = 'white'
   effect.domElement.style.backgroundColor = 'black'

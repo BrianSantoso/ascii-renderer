@@ -108,7 +108,10 @@ function init() {
   renderer = new __WEBPACK_IMPORTED_MODULE_0_three__["_16" /* WebGLRenderer */]();
   renderer.setSize(window.innerWidth, window.innerHeight);
 
-  effect = new __WEBPACK_IMPORTED_MODULE_1_three_examples_jsm_effects_AsciiEffect__["a" /* AsciiEffect */](renderer, ' `.:-+*=%@#', { invert: true });
+  let charset = "@MBHENR#KWXDFPQASUZbdehx*8Gm&04LOVYkpq5Tagns69owz$CIu23Jcfry%1v7l+it[] {}?j|()=~!-/<>\"^_';,:`. ";
+  // let charset = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. "
+  // let charset = ' `.:-+*=%@#'
+  effect = new __WEBPACK_IMPORTED_MODULE_1_three_examples_jsm_effects_AsciiEffect__["a" /* AsciiEffect */](renderer, charset, { invert: true });
   effect.setSize(window.innerWidth, window.innerHeight);
   effect.domElement.style.color = 'white';
   effect.domElement.style.backgroundColor = 'black';

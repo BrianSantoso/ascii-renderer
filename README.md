@@ -1,3 +1,5 @@
+# 3D ASCII Renderer
+
 https://infinite-everglades-91574.herokuapp.com/
 
 <a href="https://infinite-everglades-91574.herokuapp.com/">![ASCII Whale Render](https://github.com/BrianSantoso/ascii-renderer/blob/main/whale.png)</a>
@@ -7,6 +9,12 @@ https://infinite-everglades-91574.herokuapp.com/
 $ git clone https://github.com/BrianSantoso/ascii-renderer.git
 $ npm i
 ```
+
+## run dev
+```terminal
+$ npm run dev
+```
+open http://localhost:8000/ in browser
 
 ## project structure
 ```terminal
