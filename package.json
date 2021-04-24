@@ -8,13 +8,13 @@
     "precommit": "npm test",
     "prepush": "npm test",
     "heroku:add": "heroku git:remote -a",
-    "deploy:heroku": "git subtree push --prefix server heroku master",
-    "deploy:heroku2": "git push heroku master",
+    "deploy:herokuBad": "git subtree push --prefix server heroku master",
+    "deploy:heroku": "git push heroku",
     "start": "npm --prefix ./client/ run build && npm --prefix ./server/ run build && npm --prefix ./server/ run start"
   },
   "engines": {
     "node": "12.18.1",
-    "npm": "6.14.15"
+    "npm": "6.14.5"
   },
   "engineStrict": true,
   "repository": {
