@@ -1,6 +1,6 @@
 https://dashboard.heroku.com/apps/infinite-everglades-91574
 
-[![Whale Render][whale.png]][https://dashboard.heroku.com/apps/infinite-everglades-91574]
+<a href="https://dashboard.heroku.com/apps/infinite-everglades-91574/">![ASCII Whale Render](https://github.com/BrianSantoso/ascii-renderer/blob/main/whale.png)</a>
 
 ## clone or download
 ```terminal
