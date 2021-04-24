@@ -10,18 +10,15 @@ app.use(cors({
 }))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
-
-process.env.PWD = process.cwd()
-
-app.use(express.static(path.join(process.env.PWD, '../../docs')));
+app.use(express.static(path.join(__dirname, '../../docs')));
 // app.get('/', (req, res) => {
 //     res.sendFile(path.join(__dirname, '../../docs', 'index.html'));
 // });
-console.log(process.env.PWD)
-console.log(path.join(process.env.PWD, '../../docs'))
-// app.get('*', (req, res) => {
-//     res.sendFile(path.resolve(__dirname, '../../docs', 'index.html'));
-// })
+console.log(__dirname)
+console.log(path.join(__dirname, '../../docs'))
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../docs', 'index.html'));
+})
 // Server Setup
 const port = process.env.PORT || 8000
 http.createServer(app).listen(port, ()=>{
