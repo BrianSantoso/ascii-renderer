@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npm ls react && webpack-dev-server --open --config webpack.dev.js",
     "start": "serve ../docs",
-    "build": "npm install && rm -rf ../docs && webpack --config webpack.prod.js && npm run copy:static",
+    "build": "rm -rf ../docs && webpack --config webpack.prod.js && npm run copy:static",
     "copy:static": "cp -rf ./src/statics ../docs"
   },
   "author": "amazingandyyy",
