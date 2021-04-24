@@ -10,7 +10,7 @@
     "heroku:add": "heroku git:remote -a",
     "deploy:herokuBad": "git subtree push --prefix server heroku master",
     "deploy:heroku": "git push heroku",
-    "start": "npm --prefix ./client/ run build && npm --prefix ./server/ run build && npm --prefix ./server/ run start"
+    "start": "npm --prefix ./server/ run build && npm --prefix ./server/ run start"
   },
   "engines": {
     "node": "12.18.1",
