@@ -16,9 +16,18 @@ app.use(express.static(path.join(__dirname, '../../docs')));
 // });
 console.log(__dirname)
 console.log(path.join(__dirname, '../../docs'))
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../docs', 'index.html'));
-})
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, '../../docs', 'index.html'));
+// })
+
+if(process.env.NODE.ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../../docs')));
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, '../../docs', 'index.html'))
+    });
+}
+
 // Server Setup
 const port = process.env.PORT || 8000
 http.createServer(app).listen(port, ()=>{
