@@ -1,16 +1,16 @@
 {
-  "name": "mern",
+  "name": "ascii-renderer",
   "version": "2.1.1",
-  "description": "CRUD in MongoDB, Express, React/Hooks, Node",
+  "description": "ASCII Renderer",
   "main": "index.js",
   "scripts": {
     "test": "eslint --fix **/src/",
     "precommit": "npm test",
     "prepush": "npm test",
     "heroku:add": "heroku git:remote -a",
-    "deploy:herokuBad": "git subtree push --prefix server heroku master",
-    "deploy:heroku": "git push heroku",
+    "deploy:heroku": "npm --prefix ./client/ run build && git push heroku",
     "build": "npm --prefix ./server/ run build",
+    "buildall": "npm --prefix ./client/ run build && npm run build",
     "start": "npm --prefix ./server/ run start"
   },
   "engines": {
@@ -20,17 +20,17 @@
   "engineStrict": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/amazingandyyy/mern.git"
+    "url": "git+https://github.com/BrianSantoso/ascii-renderer.git"
   },
   "keywords": [
-    "react"
+    "three"
   ],
-  "author": "Amazingandyyy <amazingandyyy@gmail.com> (Andy Chen)",
+  "author": "Brian Santoso <b_@berkeley.edu> (Brian Santoso)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/amazingandyyy/mern/issues"
+    "url": "https://github.com/BrianSantoso/ascii-renderer/issues"
   },
-  "homepage": "https://github.com/amazingandyyy/mern#readme",
+  "homepage": "https://github.com/BrianSantoso/ascii-renderer#readme",
   "devDependencies": {},
   "dependencies": {
     "@amazingandyyy/git-hooks": "^0.1.0",

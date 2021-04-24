@@ -1,29 +1,6 @@
-<h1 align="center">
-🌐 MERN Stack
-</h1>
-<p align="center">
-MongoDB, Expressjs, React/Redux, Nodejs
-</p>
-
-<p align="center">
-   <a href="https://travis-ci.com/amazingandyyy/mern">
-      <img src="https://travis-ci.com/amazingandyyy/mern.svg?branch=master" />
-   </a>
-   <a href="https://github.com/amazingandyyy/mern/blob/master/LICENSE">
-      <img src="https://img.shields.io/badge/License-MIT-green.svg" />
-   </a>
-   <a href="https://circleci.com/gh/amazingandyyy/mern">
-      <img src="https://circleci.com/gh/amazingandyyy/mern.svg?style=svg" />
-   </a>
-</p>
-
-> MERN is a fullstack implementation in MongoDB, Expressjs, React/Redux, Nodejs.
-
-MERN stack is the idea of using Javascript/Node for fullstack web development.
-
 ## clone or download
 ```terminal
-$ git clone https://github.com/amazingandyyy/mern.git
+$ git clone https://github.com/BrianSantoso/ascii-renderer.git
 $ npm i
 ```
 
@@ -42,7 +19,6 @@ client/
 # Usage (run fullstack app on your machine)
 
 ## Prerequirements
-- [MongoDB](https://gist.github.com/nrollr/9f523ae17ecdbb50311980503409aeb3)
 - [Node](https://nodejs.org/en/download/) ^10.0.0
 - [npm](https://nodejs.org/en/download/package-manager/)
 
@@ -90,7 +66,7 @@ $ heroku create
 $ npm run heroku:add <your-super-amazing-heroku-app>
 // remember to run this command in the root level, not the server level, so if you follow the documentation along, you may need to do `cd ..`
 $ pwd
-/Users/<your-name>/mern
+/Users/<your-name>/<project-dir>
 $ npm run deploy:heroku
 ```
 
