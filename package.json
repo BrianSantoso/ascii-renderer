@@ -11,7 +11,6 @@
     "deploy:herokuBad": "git subtree push --prefix server heroku master",
     "deploy:heroku": "git push heroku",
     "build": "npm --prefix ./client/ run build && npm --prefix ./server/ run build",
-    "postinstall": "npm run build",
     "start": "npm --prefix ./server/ run start"
   },
   "engines": {
