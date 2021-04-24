@@ -1,6 +1,6 @@
-https://dashboard.heroku.com/apps/infinite-everglades-91574
+https://infinite-everglades-91574.herokuapp.com/
 
-<a href="https://dashboard.heroku.com/apps/infinite-everglades-91574/">![ASCII Whale Render](https://github.com/BrianSantoso/ascii-renderer/blob/main/whale.png)</a>
+<a href="https://infinite-everglades-91574.herokuapp.com/">![ASCII Whale Render](https://github.com/BrianSantoso/ascii-renderer/blob/main/whale.png)</a>
 
 ## clone or download
 ```terminal
@@ -39,19 +39,6 @@ $ npm run build // this will compile the react code using webpack and generate a
 $ npm run start // this will run the files in docs, this behavior is exactly the same how gh-pages will run your static site
 ```
 
-## Server-side usage(PORT: 8000)
-
-### Prepare your secret
-
-run the script at the first level:
-
-(You need to add a JWT_SECRET in .env to connect to MongoDB)
-
-```terminal
-// in the root level
-$ echo "JWT_SECRET=YOUR_JWT_SECRET" >> ./server/src/.env
-```
-
 ### Start
 
 ```terminal
@@ -80,16 +67,3 @@ remember to update the file of [client/webpack.prod.js](https://github.com/amazi
 ```javascript
  'API_URI': JSON.stringify('https://your-super-amazing-heroku-app.herokuapp.com')
 ```
-
-# Dependencies(tech-stacks)
-Client-side | Server-side
---- | ---
-axios: ^0.15.3 | bcrypt-nodejs: ^0.0.3
-babel-preset-stage-1: ^6.1.18|body-parser: ^1.15.2
-lodash: ^3.10.1 | cors: ^2.8.1
-react: ^16.2.0 | dotenv: ^2.0.0
-react-dom: ^16.2.0 | express: ^4.14.0
-react-redux: ^4.0.0 | jwt-simple: ^0.5.1
-react-router-dom: ^4.2.2 | mongoose: ^4.7.4
-redux: ^3.7.2 | morgan: ^1.7.0
-redux-thunk: ^2.1.0 |
