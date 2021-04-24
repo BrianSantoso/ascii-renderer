@@ -29,7 +29,7 @@ app.use((0, _cors2.default)({
 }));
 app.use(_bodyParser2.default.json());
 app.use(_bodyParser2.default.urlencoded({ extended: false }));
-// app.use(express.static(path.join(__dirname, '../../docs')));
+app.use(_express2.default.static(_path2.default.join(__dirname, '../../docs')));
 app.get('/', function (req, res) {
     res.sendFile(_path2.default.join(__dirname, '../../docs', 'index.html'));
 });
